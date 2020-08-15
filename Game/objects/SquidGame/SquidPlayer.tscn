@@ -31,8 +31,3 @@ animation = "swim"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false
 shape = SubResource( 3 )
-
-[node name="Camera2D" type="Camera2D" parent="."]
-visible = false
-current = true
-zoom = Vector2( 0.25, 0.25 )
