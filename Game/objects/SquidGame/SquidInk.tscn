@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://assets/images/color.shader" type="Shader" id=1]
+[ext_resource path="res://assets/images/SquidInk.tres" type="Texture" id=2]
+
+[sub_resource type="CapsuleShape2D" id=1]
+radius = 5.0
+height = 6.0
+
+[sub_resource type="ShaderMaterial" id=2]
+shader = ExtResource( 1 )
+shader_param/color = Color( 1, 0, 0, 1 )
+
+[node name="Area2D" type="Area2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+shape = SubResource( 1 )
+
+[node name="InkTexture" type="Sprite" parent="."]
+material = SubResource( 2 )
+texture = ExtResource( 2 )

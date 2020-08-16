@@ -4,18 +4,22 @@
 [ext_resource path="res://objects/SquidGame/SquidGame.tscn" type="PackedScene" id=2]
 [ext_resource path="res://objects/TruckGame/TruckGame.tscn" type="PackedScene" id=3]
 
-[node name="Main" type="GridContainer"]
+[node name="Main" type="HBoxContainer"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 rect_min_size = Vector2( 1024, 600 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
-columns = 2
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="ViewportContainer" type="ViewportContainer" parent="."]
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+margin_right = 510.0
+margin_bottom = 600.0
+size_flags_horizontal = 3
+
+[node name="ViewportContainer" type="ViewportContainer" parent="VBoxContainer"]
 margin_right = 510.0
 margin_bottom = 298.0
 size_flags_horizontal = 3
@@ -26,37 +30,16 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Viewport" type="Viewport" parent="ViewportContainer"]
+[node name="Viewport" type="Viewport" parent="VBoxContainer/ViewportContainer"]
 size = Vector2( 255, 149 )
 size_override_stretch = true
 handle_input_locally = false
 usage = 0
 render_target_update_mode = 3
 
-[node name="JumpGame" parent="ViewportContainer/Viewport" instance=ExtResource( 1 )]
+[node name="JumpGame" parent="VBoxContainer/ViewportContainer/Viewport" instance=ExtResource( 1 )]
 
-[node name="ViewportContainer2" type="ViewportContainer" parent="."]
-margin_left = 514.0
-margin_right = 1024.0
-margin_bottom = 298.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-stretch = true
-stretch_shrink = 2
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Viewport2" type="Viewport" parent="ViewportContainer2"]
-size = Vector2( 255, 149 )
-handle_input_locally = false
-usage = 0
-render_target_update_mode = 3
-
-[node name="SquidGame" parent="ViewportContainer2/Viewport2" instance=ExtResource( 2 )]
-position = Vector2( 0, 56.6031 )
-
-[node name="ViewportContainer3" type="ViewportContainer" parent="."]
+[node name="ViewportContainer2" type="ViewportContainer" parent="VBoxContainer"]
 margin_top = 302.0
 margin_right = 510.0
 margin_bottom = 600.0
@@ -68,18 +51,42 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Viewport" type="Viewport" parent="ViewportContainer3"]
+[node name="Viewport2" type="Viewport" parent="VBoxContainer/ViewportContainer2"]
 size = Vector2( 255, 149 )
 handle_input_locally = false
 usage = 0
 render_target_update_mode = 3
 
-[node name="Node" parent="ViewportContainer3/Viewport" instance=ExtResource( 3 )]
+[node name="SquidGame" parent="VBoxContainer/ViewportContainer2/Viewport2" instance=ExtResource( 2 )]
+position = Vector2( 0, 56.6031 )
 
-[node name="ViewportContainer4" type="ViewportContainer" parent="."]
+[node name="VBoxContainer2" type="VBoxContainer" parent="."]
 margin_left = 514.0
-margin_top = 302.0
 margin_right = 1024.0
+margin_bottom = 600.0
+size_flags_horizontal = 3
+
+[node name="ViewportContainer3" type="ViewportContainer" parent="VBoxContainer2"]
+margin_right = 510.0
+margin_bottom = 298.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+stretch = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Viewport" type="Viewport" parent="VBoxContainer2/ViewportContainer3"]
+size = Vector2( 510, 298 )
+handle_input_locally = false
+usage = 0
+render_target_update_mode = 3
+
+[node name="Node" parent="VBoxContainer2/ViewportContainer3/Viewport" instance=ExtResource( 3 )]
+
+[node name="ViewportContainer4" type="ViewportContainer" parent="VBoxContainer2"]
+margin_top = 302.0
+margin_right = 510.0
 margin_bottom = 600.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -88,7 +95,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Viewport" type="Viewport" parent="ViewportContainer4"]
+[node name="Viewport" type="Viewport" parent="VBoxContainer2/ViewportContainer4"]
 size = Vector2( 510, 298 )
 handle_input_locally = false
 usage = 0
