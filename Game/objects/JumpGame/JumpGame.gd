@@ -1,5 +1,7 @@
 extends Node2D
 
+signal loose
+
 var Section1 = preload("res://objects/JumpGame/JumpSection1.tscn")
 var Section2 = preload("res://objects/JumpGame/JumpSection2.tscn")
 var Section3 = preload("res://objects/JumpGame/JumpSection3.tscn")
@@ -35,4 +37,7 @@ func out_of_bounds():
 	sections[0].queue_free()
 	sections.remove(0)
 	spawn_section()
-	
+
+func _on_JumpPlayer_loose():
+	print("Jump Game lost")
+	emit_signal("loose")

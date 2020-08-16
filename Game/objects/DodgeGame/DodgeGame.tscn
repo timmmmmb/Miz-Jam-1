@@ -1,10 +1,12 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://assets/images/TileSet.tres" type="TileSet" id=1]
 [ext_resource path="res://objects/DodgeGame/DodgePlayer.tscn" type="PackedScene" id=2]
 [ext_resource path="res://objects/DodgeGame/DodgeEnemy.tscn" type="PackedScene" id=3]
+[ext_resource path="res://objects/DodgeGame/DodgeGame.gd" type="Script" id=4]
 
 [node name="DodgeGame" type="Node2D"]
+script = ExtResource( 4 )
 
 [node name="ColorRect4" type="ColorRect" parent="."]
 margin_left = -47.0
@@ -62,3 +64,4 @@ tile_data = PoolIntArray( 196605, 1610612761, 0, 196606, 1610612761, 0, 196607, 
 position = Vector2( 165, 110 )
 current = true
 zoom = Vector2( 0.7, 0.7 )
+[connection signal="loose" from="DodgeEnemy" to="." method="_on_DodgeEnemy_loose"]

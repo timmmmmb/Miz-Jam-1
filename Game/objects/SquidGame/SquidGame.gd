@@ -1,5 +1,6 @@
 extends Node2D
 
+signal loose
 
 var Ink = preload("res://objects/SquidGame/SquidInk.tscn")
 var timeBetween = 1
@@ -37,5 +38,6 @@ func _on_InkTimer_timeout():
 
 
 func _on_Timer_timeout():
-	pass # you lost
+	print("Squid Game lost")
+	emit_signal("loose")
 

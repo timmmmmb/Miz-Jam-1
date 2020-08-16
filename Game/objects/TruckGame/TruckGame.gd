@@ -1,5 +1,7 @@
 extends Node2D
 
+signal loose
+
 var Section1 = preload("res://objects/TruckGame/TruckSection1.tscn")
 var Section2 = preload("res://objects/TruckGame/TruckSection2.tscn")
 var Section3 = preload("res://objects/TruckGame/TruckSection3.tscn")
@@ -36,3 +38,8 @@ func out_of_bounds():
 	sections[0].queue_free()
 	sections.remove(0)
 	spawn_section()
+
+
+func _on_TruckPlayer_collide():
+	print("Truck Game lost")
+	emit_signal("loose")

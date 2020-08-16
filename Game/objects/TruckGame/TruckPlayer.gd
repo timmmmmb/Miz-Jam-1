@@ -1,5 +1,6 @@
 extends KinematicBody2D
 
+signal collide
 
 export (int) var speed = 100
 
@@ -23,6 +24,8 @@ func get_input():
 func _physics_process(delta):
 	get_input()
 	var collision = move_and_collide(velocity*delta)
+	if collision:
+		emit_signal("collide")
 	
 func _stop_animating():
 	is_animating = false

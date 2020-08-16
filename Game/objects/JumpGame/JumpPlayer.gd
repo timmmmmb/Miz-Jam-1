@@ -1,5 +1,7 @@
 extends KinematicBody2D
 
+signal loose
+
 export (int) var run_speed = 100
 export (int) var jump_speed = -300
 export (int) var gravity = 1200
@@ -26,3 +28,7 @@ func _physics_process(delta):
 	elif velocity.x != 0:
 		$AnimatedSprite.animation = "run"
 	velocity = move_and_slide(velocity, Vector2(0, -1))
+
+
+func _on_VisibilityNotifier2D_screen_exited():
+	emit_signal("loose")
