@@ -36,6 +36,7 @@ size_override_stretch = true
 handle_input_locally = false
 usage = 0
 render_target_update_mode = 3
+audio_listener_enable_2d = true
 
 [node name="JumpGame" parent="VBoxContainer/ViewportContainer/Viewport" instance=ExtResource( 1 )]
 
@@ -56,6 +57,7 @@ size = Vector2( 255, 149 )
 handle_input_locally = false
 usage = 0
 render_target_update_mode = 3
+audio_listener_enable_2d = true
 
 [node name="SquidGame" parent="VBoxContainer/ViewportContainer2/Viewport2" instance=ExtResource( 2 )]
 position = Vector2( 0, 56.6031 )
@@ -69,7 +71,6 @@ size_flags_horizontal = 3
 [node name="ViewportContainer3" type="ViewportContainer" parent="VBoxContainer2"]
 margin_right = 510.0
 margin_bottom = 298.0
-size_flags_horizontal = 3
 size_flags_vertical = 3
 stretch = true
 __meta__ = {
@@ -81,8 +82,9 @@ size = Vector2( 510, 298 )
 handle_input_locally = false
 usage = 0
 render_target_update_mode = 3
+audio_listener_enable_2d = true
 
-[node name="Node" parent="VBoxContainer2/ViewportContainer3/Viewport" instance=ExtResource( 3 )]
+[node name="TruckGame" parent="VBoxContainer2/ViewportContainer3/Viewport" instance=ExtResource( 3 )]
 
 [node name="ViewportContainer4" type="ViewportContainer" parent="VBoxContainer2"]
 margin_top = 302.0
@@ -100,3 +102,4 @@ size = Vector2( 510, 298 )
 handle_input_locally = false
 usage = 0
 render_target_update_mode = 3
+audio_listener_enable_2d = true
