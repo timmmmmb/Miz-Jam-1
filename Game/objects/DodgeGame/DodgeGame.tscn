@@ -1,0 +1,64 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://assets/images/TileSet.tres" type="TileSet" id=1]
+[ext_resource path="res://objects/DodgeGame/DodgePlayer.tscn" type="PackedScene" id=2]
+[ext_resource path="res://objects/DodgeGame/DodgeEnemy.tscn" type="PackedScene" id=3]
+
+[node name="DodgeGame" type="Node2D"]
+
+[node name="ColorRect4" type="ColorRect" parent="."]
+margin_left = -47.0
+margin_top = -62.0
+margin_right = 368.0
+margin_bottom = 176.0
+color = Color( 0.501961, 0.501961, 0.0235294, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_left = -47.0
+margin_top = 32.0
+margin_right = 16.0
+margin_bottom = 192.0
+color = Color( 0.211765, 0.160784, 0.160784, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+margin_left = 305.0
+margin_top = 32.0
+margin_right = 368.0
+margin_bottom = 192.0
+color = Color( 0.211765, 0.160784, 0.160784, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect3" type="ColorRect" parent="."]
+margin_left = -48.0
+margin_top = 177.0
+margin_right = 368.0
+margin_bottom = 235.0
+color = Color( 0.211765, 0.160784, 0.160784, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DodgePlayer" parent="." instance=ExtResource( 2 )]
+position = Vector2( 165, 169 )
+
+[node name="DodgeEnemy" parent="." instance=ExtResource( 3 )]
+position = Vector2( 165, 27 )
+
+[node name="Node2D" type="TileMap" parent="."]
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 16, 16 )
+format = 1
+tile_data = PoolIntArray( 196605, 1610612761, 0, 196606, 1610612761, 0, 196607, 1610612761, 0, 131072, 28, 0, 131073, -1073741787, 0, 131074, -1073741787, 0, 131075, -1073741787, 0, 131076, -1073741787, 0, 131077, -1073741787, 0, 131078, -1073741787, 0, 131079, -1073741787, 0, 131080, -1073741787, 0, 131081, -1073741787, 0, 131082, -1073741787, 0, 131083, -1073741787, 0, 131084, -1073741787, 0, 131085, -1073741787, 0, 131086, -1073741787, 0, 131087, -1073741787, 0, 131088, -1073741787, 0, 131089, -1073741787, 0, 131090, -1073741787, 0, 131091, -1073741796, 0, 131092, 1610612761, 0, 131093, 1610612761, 0, 131094, 1610612761, 0, 262141, 30, 0, 196608, -1610612707, 0, 196627, -1073741795, 0, 196629, 1610612767, 0, 262144, -1610612707, 0, 262163, 1610612763, 0, 393214, 30, 0, 327680, 27, 0, 327683, 36, 0, 327696, 36, 0, 327699, -1073741795, 0, 327700, -1073741794, 0, 393216, -1610612707, 0, 393235, -1073741795, 0, 458752, -1610612707, 0, 458771, 1610612763, 0, 458773, 30, 0, 589822, 1610612766, 0, 524288, -1610612707, 0, 524307, -1073741795, 0, 524308, -1073741794, 0, 589824, -1610612707, 0, 589843, -1073741795, 0, 720895, 30, 0, 655360, 27, 0, 655379, -1073741795, 0, 655381, 1610612767, 0, 786429, 1610612766, 0, 720896, 27, 0, 720897, 29, 0, 720898, 29, 0, 720899, -1073741797, 0, 720900, 29, 0, 720901, 29, 0, 720902, 1610612761, 0, 720903, 29, 0, 720904, 29, 0, 720905, -1073741797, 0, 720906, 29, 0, 720907, 29, 0, 720908, -1073741797, 0, 720909, 1610612761, 0, 720910, 29, 0, 720911, -1073741797, 0, 720912, 29, 0, 720913, 29, 0, 720914, 29, 0, 720915, 1610612763, 0, 786433, 1610612768, 0, 786436, 1610612767, 0, 786441, 1610612766, 0, 786446, 1610612768, 0, 786453, 1610612767, 0, 917502, 1610612766, 0, 851976, 1610612768, 0, 851979, 1610612767, 0, 851983, 1610612766, 0, 851985, 1610612767, 0, 851988, 1610612766, 0, 851990, 1610612766, 0, 917509, 1610612766, 0 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 165, 110 )
+current = true
+zoom = Vector2( 0.7, 0.7 )

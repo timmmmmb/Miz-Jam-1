@@ -1,11 +1,22 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://assets/images/TileSet.tres" type="TileSet" id=1]
 [ext_resource path="res://objects/SquidGame/SquidPlayer.tscn" type="PackedScene" id=2]
 [ext_resource path="res://objects/SquidGame/SquidGame.gd" type="Script" id=3]
+[ext_resource path="res://objects/SquidGame/Progress.gd" type="Script" id=4]
 
 [node name="SquidGame" type="Node2D"]
 script = ExtResource( 3 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_left = -9.0
+margin_top = -10.0
+margin_right = 271.0
+margin_bottom = 153.0
+color = Color( 0.360784, 0, 1, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = ExtResource( 1 )
@@ -18,6 +29,7 @@ tile_data = PoolIntArray( -1, 21, 0, -65536, 21, 0, -65535, 21, 0, -65534, 21, 0
 position = Vector2( 128, 72 )
 
 [node name="Timer" type="Timer" parent="SquidPlayer"]
+wait_time = 5.0
 one_shot = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -27,5 +39,8 @@ current = true
 
 [node name="InkTimer" type="Timer" parent="."]
 one_shot = true
+
+[node name="Progress" type="Node2D" parent="."]
+script = ExtResource( 4 )
 [connection signal="timeout" from="SquidPlayer/Timer" to="." method="_on_Timer_timeout"]
 [connection signal="timeout" from="InkTimer" to="." method="_on_InkTimer_timeout"]

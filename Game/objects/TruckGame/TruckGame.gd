@@ -36,4 +36,3 @@ func out_of_bounds():
 	sections[0].queue_free()
 	sections.remove(0)
 	spawn_section()
-	

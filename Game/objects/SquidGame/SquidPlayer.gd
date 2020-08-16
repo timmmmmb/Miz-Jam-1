@@ -27,5 +27,5 @@ func get_input():
 
 func _physics_process(_delta):
 	get_input()
-	$AnimatedSprite.animation = "swim"
+	$Sprite.animation = "swim"
 	velocity = move_and_slide(velocity, Vector2(0, -1))

@@ -17,7 +17,7 @@ scale = Vector2( 22.5, 10.4 )
 
 [node name="ColorRect" type="ColorRect" parent="."]
 show_behind_parent = true
-margin_top = -80.0
+margin_top = -128.0
 margin_right = 448.0
 margin_bottom = -16.0
 color = Color( 0.0196078, 0.392157, 0.0431373, 1 )
@@ -39,7 +39,7 @@ __meta__ = {
 show_behind_parent = true
 margin_top = 64.0
 margin_right = 448.0
-margin_bottom = 128.0
+margin_bottom = 192.0
 color = Color( 0.0196078, 0.392157, 0.0431373, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
