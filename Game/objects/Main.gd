@@ -1,4 +1,5 @@
 extends HBoxContainer
 
 func loose():
-	pass
+	get_tree().paused = true
+

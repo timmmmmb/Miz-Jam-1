@@ -1,9 +1,43 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://assets/images/TileSet.tres" type="TileSet" id=1]
 [ext_resource path="res://objects/DodgeGame/DodgePlayer.tscn" type="PackedScene" id=2]
 [ext_resource path="res://objects/DodgeGame/DodgeEnemy.tscn" type="PackedScene" id=3]
 [ext_resource path="res://objects/DodgeGame/DodgeGame.gd" type="Script" id=4]
+
+[sub_resource type="Animation" id=1]
+resource_name = "EnemyMove"
+length = 12.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("DodgeEnemy:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 6, 12 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 23, 26 ), Vector2( 298, 27 ), Vector2( 22, 27 ) ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "Movement"
+length = 1.5
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("DodgeEnemy:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.7, 1.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ -10.0, 10.0, -10.0 ]
+}
 
 [node name="DodgeGame" type="Node2D"]
 script = ExtResource( 4 )
@@ -52,7 +86,8 @@ __meta__ = {
 position = Vector2( 165, 169 )
 
 [node name="DodgeEnemy" parent="." instance=ExtResource( 3 )]
-position = Vector2( 165, 27 )
+position = Vector2( 23, 26 )
+rotation = -0.174533
 
 [node name="Node2D" type="TileMap" parent="."]
 tile_set = ExtResource( 1 )
@@ -64,4 +99,12 @@ tile_data = PoolIntArray( 196605, 1610612761, 0, 196606, 1610612761, 0, 196607, 
 position = Vector2( 165, 110 )
 current = true
 zoom = Vector2( 0.7, 0.7 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "EnemyMove"
+anims/EnemyMove = SubResource( 1 )
+
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="."]
+autoplay = "Movement"
+anims/Movement = SubResource( 2 )
 [connection signal="loose" from="DodgeEnemy" to="." method="_on_DodgeEnemy_loose"]
