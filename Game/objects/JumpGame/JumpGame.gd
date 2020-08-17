@@ -20,6 +20,7 @@ func start_game():
 	spawn_section(false)
 	spawn_section(false)
 	spawn_section()
+	spawn_section()
 
 func spawn_section(random_index = true):
 	var sectionIndex = 0
@@ -29,6 +30,7 @@ func spawn_section(random_index = true):
 	call_deferred("add_child", section)
 	call_deferred("move_child",section, 0)
 	section.position.x = section_offset
+	section.position.y = 50
 	section_offset += SECTION_WIDTH
 	section.get_node("Visibility").connect("screen_exited", self, "out_of_bounds")
 	sections.append(section)
