@@ -1,4 +1,4 @@
 extends Node
-	
-func _process(delta):
-	pass
+onready var main = get_parent()
+
+

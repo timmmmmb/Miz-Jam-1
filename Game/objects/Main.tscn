@@ -1,13 +1,13 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://objects/JumpGame/JumpGame.tscn" type="PackedScene" id=1]
 [ext_resource path="res://objects/SquidGame/SquidGame.tscn" type="PackedScene" id=2]
 [ext_resource path="res://objects/TruckGame/TruckGame.tscn" type="PackedScene" id=3]
 [ext_resource path="res://objects/DodgeGame/DodgeGame.tscn" type="PackedScene" id=4]
 [ext_resource path="res://objects/Main.gd" type="Script" id=5]
-[ext_resource path="res://objects/Game Over.gd" type="Script" id=6]
 
 [node name="Main" type="HBoxContainer"]
+pause_mode = 2
 anchor_right = 1.0
 anchor_bottom = 1.0
 rect_min_size = Vector2( 1024, 600 )
@@ -24,6 +24,7 @@ size_flags_horizontal = 3
 custom_constants/separation = 0
 
 [node name="ViewportContainer1" type="ViewportContainer" parent="VBoxContainer"]
+pause_mode = 1
 margin_right = 512.0
 margin_bottom = 300.0
 size_flags_horizontal = 3
@@ -43,8 +44,10 @@ render_target_update_mode = 3
 audio_listener_enable_2d = true
 
 [node name="JumpGame" parent="VBoxContainer/ViewportContainer1/Viewport" instance=ExtResource( 1 )]
+pause_mode = 1
 
 [node name="ViewportContainer2" type="ViewportContainer" parent="VBoxContainer"]
+pause_mode = 1
 margin_top = 300.0
 margin_right = 512.0
 margin_bottom = 600.0
@@ -64,6 +67,7 @@ render_target_update_mode = 3
 audio_listener_enable_2d = true
 
 [node name="SquidGame" parent="VBoxContainer/ViewportContainer2/Viewport" instance=ExtResource( 2 )]
+pause_mode = 1
 position = Vector2( 0, 56.6031 )
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="."]
@@ -74,6 +78,7 @@ size_flags_horizontal = 3
 custom_constants/separation = 0
 
 [node name="ViewportContainer1" type="ViewportContainer" parent="VBoxContainer2"]
+pause_mode = 1
 margin_right = 512.0
 margin_bottom = 300.0
 size_flags_vertical = 3
@@ -90,8 +95,10 @@ render_target_update_mode = 3
 audio_listener_enable_2d = true
 
 [node name="TruckGame" parent="VBoxContainer2/ViewportContainer1/Viewport" instance=ExtResource( 3 )]
+pause_mode = 1
 
 [node name="ViewportContainer2" type="ViewportContainer" parent="VBoxContainer2"]
+pause_mode = 1
 margin_top = 300.0
 margin_right = 512.0
 margin_bottom = 600.0
@@ -110,10 +117,7 @@ render_target_update_mode = 3
 audio_listener_enable_2d = true
 
 [node name="DodgeGame" parent="VBoxContainer2/ViewportContainer2/Viewport" instance=ExtResource( 4 )]
-
-[node name="Game Over" type="Node" parent="."]
-pause_mode = 2
-script = ExtResource( 6 )
+pause_mode = 1
 [connection signal="loose" from="VBoxContainer/ViewportContainer1/Viewport/JumpGame" to="." method="loose"]
 [connection signal="loose" from="VBoxContainer/ViewportContainer2/Viewport/SquidGame" to="." method="loose"]
 [connection signal="loose" from="VBoxContainer2/ViewportContainer1/Viewport/TruckGame" to="." method="loose"]

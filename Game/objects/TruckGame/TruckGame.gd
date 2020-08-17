@@ -27,8 +27,8 @@ func spawn_section(random_index = true):
 	if random_index:
 		sectionIndex = randi() % 4
 	var section = possible_sections[sectionIndex].instance()
-	add_child(section)
-	move_child(section, 0)
+	call_deferred("add_child", section)
+	call_deferred("move_child",section, 0)
 	section.position.x = section_offset
 	section_offset += SECTION_WIDTH
 	section.get_node("Visibility").connect("screen_exited", self, "out_of_bounds")
