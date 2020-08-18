@@ -19,6 +19,10 @@ config/name="Game"
 run/main_scene="res://objects/Main.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+HighScore="*res://objects/HighScore.gd"
+
 [display]
 
 window/size/resizable=false

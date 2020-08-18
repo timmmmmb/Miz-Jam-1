@@ -17,6 +17,12 @@ func loose():
 	game_paused = true
 	for game in games:
 		game.pause_mode = PAUSE_MODE_STOP
+	$GameOver.visible = true
+	$GameOver/VBoxContainer/YourScore.text = "Score: "+str(currentScore)
+	if currentScore > HighScore.highscore:
+		HighScore.highscore = currentScore
+	$GameOver/VBoxContainer/Highscore.text = "Highscore: "+str(HighScore.highscore)
+	
 
 func restart():
 	for game in games:
@@ -29,7 +35,7 @@ func restart():
 func _process(_delta):
 	if !game_paused:
 		currentScore = OS.get_ticks_msec()-starttime
-		if currentScore >= 15000 && squidgame.pause_mode == PAUSE_MODE_STOP:
+		if currentScore >= 1500 && squidgame.pause_mode == PAUSE_MODE_STOP:
 			$AnimationPlayer.play("SquidGame")
 		if currentScore >= 30000 && dodgegame.pause_mode == PAUSE_MODE_STOP:
 			$AnimationPlayer.play("DodgeGame")
