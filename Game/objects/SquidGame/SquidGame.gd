@@ -1,6 +1,4 @@
-extends Node2D
-
-signal loose
+extends "res://objects/BaseGame.gd"
 
 var Ink = preload("res://objects/SquidGame/SquidInk.tscn")
 var timeBetween = 1

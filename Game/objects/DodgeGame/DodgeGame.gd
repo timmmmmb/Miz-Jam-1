@@ -1,6 +1,4 @@
-extends Node2D
-
-signal loose
+extends "res://objects/BaseGame.gd"
 
 func _on_DodgeEnemy_loose():
 	print("Dodge Game lost")

@@ -12,19 +12,19 @@
 resource_name = "DodgeGame"
 step = 0.01
 tracks/0/type = "value"
-tracks/0/path = NodePath("ViewportContainer3/Viewport/DodgeGame:pause_mode")
+tracks/0/path = NodePath("ViewportContainer1:margin_right")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.01 ),
+"times": PoolRealArray( 0, 1 ),
 "transitions": PoolRealArray( 1, 1 ),
-"update": 1,
-"values": [ 1, 2 ]
+"update": 0,
+"values": [ 1024.0, 512.0 ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("ViewportContainer1:margin_right")
+tracks/1/path = NodePath("ViewportContainer3:margin_left")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -33,27 +33,15 @@ tracks/1/keys = {
 "times": PoolRealArray( 0, 1 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ 1024.0, 512.0 ]
+"values": [ 1024.0, 512 ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("ViewportContainer3:margin_left")
+tracks/2/path = NodePath("ViewportContainer3:rect_size")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 0, 1 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ 1024.0, 512 ]
-}
-tracks/3/type = "value"
-tracks/3/path = NodePath("ViewportContainer3:rect_size")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/keys = {
 "times": PoolRealArray( 0, 1 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
@@ -63,19 +51,19 @@ tracks/3/keys = {
 [sub_resource type="Animation" id=2]
 step = 0.01
 tracks/0/type = "value"
-tracks/0/path = NodePath("ViewportContainer2/Viewport/SquidGame:pause_mode")
+tracks/0/path = NodePath("ViewportContainer1:margin_bottom")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.02 ),
+"times": PoolRealArray( 0, 1 ),
 "transitions": PoolRealArray( 1, 1 ),
-"update": 1,
-"values": [ 1, 2 ]
+"update": 0,
+"values": [ 600.0, 300.0 ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("ViewportContainer1:margin_bottom")
+tracks/1/path = NodePath("ViewportContainer2:margin_top")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -84,10 +72,10 @@ tracks/1/keys = {
 "times": PoolRealArray( 0, 1 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ 600.0, 300.0 ]
+"values": [ 600.0, 300 ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("ViewportContainer2:margin_top")
+tracks/2/path = NodePath("ViewportContainer1:margin_top")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -96,27 +84,15 @@ tracks/2/keys = {
 "times": PoolRealArray( 0, 1 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ 600.0, 300 ]
+"values": [ 0.0, -80.0 ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("ViewportContainer1:margin_top")
+tracks/3/path = NodePath("ViewportContainer2:rect_size")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
 tracks/3/enabled = true
 tracks/3/keys = {
-"times": PoolRealArray( 0, 1 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ 0.0, -80.0 ]
-}
-tracks/4/type = "value"
-tracks/4/path = NodePath("ViewportContainer2:rect_size")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/keys = {
 "times": PoolRealArray( 0, 1 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
@@ -127,19 +103,19 @@ tracks/4/keys = {
 resource_name = "TruckGame"
 step = 0.01
 tracks/0/type = "value"
-tracks/0/path = NodePath("ViewportContainer4/Viewport/TruckGame:pause_mode")
+tracks/0/path = NodePath("ViewportContainer4:rect_size")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.01 ),
+"times": PoolRealArray( 0, 1 ),
 "transitions": PoolRealArray( 1, 1 ),
-"update": 1,
-"values": [ 1, 2 ]
+"update": 0,
+"values": [ Vector2( 512, 300 ), Vector2( 512, 300 ) ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("ViewportContainer4:rect_size")
+tracks/1/path = NodePath("ViewportContainer4:margin_left")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -148,27 +124,15 @@ tracks/1/keys = {
 "times": PoolRealArray( 0, 1 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( 512, 300 ), Vector2( 512, 300 ) ]
+"values": [ 1024.0, 512.0 ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("ViewportContainer4:margin_left")
+tracks/2/path = NodePath("ViewportContainer2:margin_right")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 0, 1 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ 1024.0, 512.0 ]
-}
-tracks/3/type = "value"
-tracks/3/path = NodePath("ViewportContainer2:margin_right")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/keys = {
 "times": PoolRealArray( 0, 1 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
@@ -186,7 +150,6 @@ __meta__ = {
 }
 
 [node name="ViewportContainer1" type="ViewportContainer" parent="."]
-pause_mode = 1
 margin_right = 1024.0
 margin_bottom = 600.0
 size_flags_horizontal = 3
@@ -205,10 +168,8 @@ render_target_update_mode = 3
 audio_listener_enable_2d = true
 
 [node name="JumpGame" parent="ViewportContainer1/Viewport" instance=ExtResource( 1 )]
-pause_mode = 1
 
 [node name="ViewportContainer2" type="ViewportContainer" parent="."]
-pause_mode = 1
 margin_top = 600.0
 margin_right = 1024.0
 margin_bottom = 900.0
@@ -232,7 +193,6 @@ pause_mode = 1
 position = Vector2( 0, 56.6031 )
 
 [node name="ViewportContainer3" type="ViewportContainer" parent="."]
-pause_mode = 2
 margin_left = 1024.0
 margin_right = 1536.0
 margin_bottom = 300.0
@@ -254,7 +214,6 @@ audio_listener_enable_2d = true
 pause_mode = 1
 
 [node name="ViewportContainer4" type="ViewportContainer" parent="."]
-pause_mode = 2
 margin_left = 1024.0
 margin_top = 300.0
 margin_right = 1536.0
@@ -276,7 +235,6 @@ audio_listener_enable_2d = true
 pause_mode = 1
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-pause_mode = 2
 method_call_mode = 1
 anims/DodgeGame = SubResource( 1 )
 anims/SquidGame = SubResource( 2 )

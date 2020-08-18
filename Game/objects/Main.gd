@@ -10,13 +10,14 @@ var game_paused = false
 
 func _ready():
 	get_tree().paused = true
+	Physics2DServer.set_active(true)
 	game_paused = false
 	restart()
 
 func loose():
 	game_paused = true
 	for game in games:
-		game.pause_mode = PAUSE_MODE_STOP
+		game.setPaused(true)
 	$GameOver.visible = true
 	$GameOver/VBoxContainer/YourScore.text = "Score: "+str(currentScore)
 	if currentScore > HighScore.highscore:
@@ -26,8 +27,8 @@ func loose():
 
 func restart():
 	for game in games:
-		game.pause_mode = PAUSE_MODE_STOP
-	jumpgame.pause_mode = PAUSE_MODE_PROCESS
+		game.setPaused(true)
+	jumpgame.setPaused(false)
 	starttime = OS.get_ticks_msec()
 	currentScore = 0
 	game_paused = false
@@ -35,11 +36,14 @@ func restart():
 func _process(_delta):
 	if !game_paused:
 		currentScore = OS.get_ticks_msec()-starttime
-		if currentScore >= 1500 && squidgame.pause_mode == PAUSE_MODE_STOP:
+		if currentScore >= 15000 && squidgame.paused:
+			squidgame.setPaused(false)
 			$AnimationPlayer.play("SquidGame")
-		if currentScore >= 30000 && dodgegame.pause_mode == PAUSE_MODE_STOP:
+		if currentScore >= 30000 && dodgegame.paused:
+			dodgegame.setPaused(false)
 			$AnimationPlayer.play("DodgeGame")
-		if currentScore >= 45000 && truckgame.pause_mode == PAUSE_MODE_STOP:
+		if currentScore >= 45000 && truckgame.paused:
+			truckgame.setPaused(false)
 			$AnimationPlayer.play("TruckGame")
 		$ScoreLabel.text = str(currentScore)
 	

@@ -1,6 +1,4 @@
-extends Node2D
-
-signal loose
+extends "res://objects/BaseGame.gd"
 
 var Section1 = preload("res://objects/TruckGame/TruckSection1.tscn")
 var Section2 = preload("res://objects/TruckGame/TruckSection2.tscn")
