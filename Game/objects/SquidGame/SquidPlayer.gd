@@ -13,17 +13,34 @@ func get_input():
 		
 	if left:
 		velocity.x -= run_speed
-		rotation_degrees = -90
-	elif right:
+	if right:
 		velocity.x += run_speed
-		rotation_degrees = 90
-	elif up:
+	if up:
 		velocity.y -= run_speed
-		rotation_degrees = 0
-	elif down:
+	if down:
 		velocity.y += run_speed
-		rotation_degrees = 180
-	
+		
+	if velocity.x > 0:
+		if velocity.y > 0:
+			rotation_degrees = 135
+		elif velocity.y < 0:
+			rotation_degrees = 45
+		else:
+			rotation_degrees = 90
+	elif velocity.x < 0:
+		if velocity.y > 0:
+			rotation_degrees = -135
+		elif velocity.y < 0:
+			rotation_degrees = -45
+		else:
+			rotation_degrees = -90
+	else:
+		if velocity.y > 0:
+			rotation_degrees = 180
+		elif velocity.y < 0:
+			rotation_degrees = 0
+		else:
+			rotation_degrees = 0
 
 func _physics_process(_delta):
 	get_input()

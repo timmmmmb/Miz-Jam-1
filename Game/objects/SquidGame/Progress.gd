@@ -2,7 +2,7 @@ extends Node2D
 
 func _draw():
 	if(get_parent().get_node("SquidPlayer/Timer").time_left != 0):
-		draw_circle_arc_poly(get_parent().get_node("SquidPlayer").position+Vector2(0, -25), 8, 0, (get_parent().get_node("SquidPlayer/Timer").time_left*PI*2)/5, Color8(0,0,150))
+		draw_circle_arc_poly(get_parent().get_node("SquidPlayer").position+Vector2(0, -25), 8, 0, (get_parent().get_node("SquidPlayer/Timer").time_left*PI*2)/get_parent().get_node("SquidPlayer/Timer").wait_time, Color8(0,0,150))
 	else:
 		draw_circle_arc_poly(get_parent().get_node("SquidPlayer").position+Vector2(0, -25), 8, 0, 2*PI, Color8(0,0,150))
 						

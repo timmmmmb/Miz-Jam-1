@@ -23,7 +23,7 @@ func loose():
 	if currentScore > HighScore.highscore:
 		HighScore.highscore = currentScore
 	$GameOver/VBoxContainer/Highscore.text = "Highscore: "+str(HighScore.highscore)
-	
+	$AnimationPlayer.stop()
 
 func restart():
 	for game in games:

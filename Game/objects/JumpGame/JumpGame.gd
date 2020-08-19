@@ -42,3 +42,7 @@ func _on_JumpPlayer_loose():
 	print("Jump Game lost")
 	emit_signal("loose")
 	
+
+
+func _on_Timer_timeout():
+	$JumpPlayer/Camera/Tutorial.visible = false

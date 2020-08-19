@@ -19,7 +19,7 @@ func start_game():
 	spawn_section(false)
 	spawn_section(false)
 	spawn_section()
-
+	
 func spawn_section(random_index = true):
 	var sectionIndex = 0
 	if random_index:
@@ -41,3 +41,7 @@ func out_of_bounds():
 func _on_TruckPlayer_collide():
 	print("Truck Game lost")
 	emit_signal("loose")
+
+
+func _on_Timer_timeout():
+	$TruckPlayer/Camera/Tutorial.visible = false

@@ -1,9 +1,10 @@
 extends "res://objects/BaseGame.gd"
 
 var Ink = preload("res://objects/SquidGame/SquidInk.tscn")
-var timeBetween = 1
 var current_ink
 var possible_colors = [	Color8(203, 255, 0),Color8(204, 0, 255),Color8(255, 0, 110),Color8(0, 255, 102),Color8(204, 0, 255)]
+var timeBetween = 3
+var ink_time = 5
 
 func _ready():
 	randomize()
@@ -23,6 +24,7 @@ func start_game():
 func spawn_ink():
 #	if is_instance_valid(current_ink):
 #		return
+	$SquidPlayer/Timer.wait_time = ink_time
 	$SquidPlayer/Timer.start()
 	current_ink = Ink.instance()
 	current_ink.position = Vector2(rand_range(20,220), rand_range(20, 120))
@@ -34,6 +36,7 @@ func remove_ink(body):
 	if is_instance_valid(current_ink):
 		body.get_node("Sprite").material.set_shader_param("color", current_ink.get_node("InkTexture").material.get_shader_param("color"))
 		current_ink.queue_free()
+		$InkTimer.wait_time = timeBetween
 		$InkTimer.start()
 		$SquidPlayer/Timer.stop()
 
@@ -46,3 +49,7 @@ func _on_Timer_timeout():
 	print("Squid Game lost")
 	emit_signal("loose")
 
+
+
+func _on_TutorialTimer_timeout():
+	$Tutorial.visible = false 

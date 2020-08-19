@@ -300,4 +300,5 @@ custom_fonts/font = ExtResource( 6 )
 text = "Press R to restart"
 [connection signal="loose" from="ViewportContainer1/Viewport/JumpGame" to="." method="loose"]
 [connection signal="loose" from="ViewportContainer2/Viewport/SquidGame" to="." method="loose"]
+[connection signal="loose" from="ViewportContainer3/Viewport/DodgeGame" to="." method="loose"]
 [connection signal="loose" from="ViewportContainer4/Viewport/TruckGame" to="." method="loose"]
