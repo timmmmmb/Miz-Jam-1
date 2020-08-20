@@ -4,8 +4,6 @@ export (int) var speed = 25
 
 func _physics_process(delta):
 	position.y += speed * delta
-	
-
 
 
 func _on_DodgeFireBall_body_entered(body):
