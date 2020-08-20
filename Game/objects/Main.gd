@@ -17,7 +17,7 @@ func _ready():
 func loose():
 	game_paused = true
 	for game in games:
-		game.setPaused(true)
+		game.set_paused(true)
 	$GameOver.visible = true
 	$GameOver/VBoxContainer/YourScore.text = "Score: "+str(currentScore)
 	if currentScore > HighScore.highscore:
@@ -27,8 +27,8 @@ func loose():
 
 func restart():
 	for game in games:
-		game.setPaused(true)
-	jumpgame.setPaused(false)
+		game.set_paused(true)
+	jumpgame.set_paused(false)
 	starttime = OS.get_ticks_msec()
 	currentScore = 0
 	game_paused = false
@@ -37,13 +37,13 @@ func _process(_delta):
 	if !game_paused:
 		currentScore = OS.get_ticks_msec()-starttime
 		if currentScore >= 15000 && squidgame.paused:
-			squidgame.setPaused(false)
+			squidgame.set_paused(false)
 			$AnimationPlayer.play("SquidGame")
 		if currentScore >= 30000 && dodgegame.paused:
-			dodgegame.setPaused(false)
+			dodgegame.set_paused(false)
 			$AnimationPlayer.play("DodgeGame")
 		if currentScore >= 45000 && truckgame.paused:
-			truckgame.setPaused(false)
+			truckgame.set_paused(false)
 			$AnimationPlayer.play("TruckGame")
 		$ScoreLabel.text = str(currentScore)
 	

@@ -4,7 +4,7 @@ signal loose
 
 var paused = false
 
-func setPaused(p):
+func set_paused(p):
 	paused = p
 	if(paused):
 		pause_mode = PAUSE_MODE_STOP
@@ -12,4 +12,4 @@ func setPaused(p):
 		pause_mode = PAUSE_MODE_PROCESS
 
 func _ready():
-	setPaused(paused)
+	set_paused(paused)
