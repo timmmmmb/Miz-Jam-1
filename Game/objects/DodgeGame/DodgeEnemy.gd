@@ -2,7 +2,7 @@ extends Node2D
 
 signal loose
 
-var dodge_fireball = preload("res://objects/DodgeGame/DodgeFireball.tscn")
+var dodge_fireball = preload("res://objects/DodgeGame/DodgeFireBall.tscn")
 
 func _on_Timer_timeout():
 	var fireball = dodge_fireball.instance()

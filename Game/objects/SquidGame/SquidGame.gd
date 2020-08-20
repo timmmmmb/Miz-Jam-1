@@ -34,7 +34,7 @@ func spawn_ink():
 
 func remove_ink(body):
 	if is_instance_valid(current_ink):
-		body.get_node("Sprite").material.set_shader_param("color", current_ink.get_node("InkTexture").material.get_shader_param("color"))
+		body._change_color(current_ink.get_node("InkTexture").material.get_shader_param("color"))
 		current_ink.queue_free()
 		$InkTimer.wait_time = timeBetween
 		$InkTimer.start()

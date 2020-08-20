@@ -26,6 +26,10 @@ config/icon="res://assets/images/icon/Logo_color.png"
 
 HighScore="*res://objects/HighScore.gd"
 
+[debug]
+
+gdscript/warnings/return_value_discarded=false
+
 [display]
 
 window/size/resizable=false
