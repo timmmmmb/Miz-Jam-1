@@ -3,8 +3,8 @@ extends KinematicBody2D
 signal loose
 
 export (int) var run_speed = 100
-export (int) var jump_speed = -450
-export (int) var gravity = 1200
+export (int) var jump_speed = -300
+export (int) var gravity = 800
 
 var velocity = Vector2()
 var jumping = false

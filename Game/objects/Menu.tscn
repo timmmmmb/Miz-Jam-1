@@ -1,10 +1,12 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://assets/images/TileSet.tres" type="TileSet" id=1]
 [ext_resource path="res://assets/font/font22pt.tres" type="DynamicFont" id=2]
 [ext_resource path="res://assets/images/icon/Logo_color.png" type="Texture" id=3]
 [ext_resource path="res://assets/images/SquidTexture.tres" type="Texture" id=4]
 [ext_resource path="res://assets/images/colored_transparent_packed.png" type="Texture" id=5]
+[ext_resource path="res://objects/Menu.gd" type="Script" id=6]
+[ext_resource path="res://assets/font/Xolonium-Regular.ttf" type="DynamicFontData" id=7]
 
 [sub_resource type="Animation" id=1]
 resource_name = "Blink"
@@ -22,7 +24,7 @@ tracks/0/keys = {
 "values": [ true, false, true ]
 }
 
-[sub_resource type="Animation" id=6]
+[sub_resource type="Animation" id=2]
 resource_name = "Drive"
 length = 15.0
 loop = true
@@ -39,7 +41,7 @@ tracks/0/keys = {
 "values": [ Vector2( 8.232, 8 ), Vector2( 870, 8 ) ]
 }
 
-[sub_resource type="Animation" id=7]
+[sub_resource type="Animation" id=3]
 resource_name = "Swim"
 length = 8.0
 loop = true
@@ -68,11 +70,16 @@ tracks/1/keys = {
 "values": [ 0.0, 90.0, 180.0, 270.0, 0.0 ]
 }
 
-[sub_resource type="AtlasTexture" id=5]
+[sub_resource type="AtlasTexture" id=4]
 atlas = ExtResource( 5 )
 region = Rect2( 688, 16, 16, 16 )
 
+[sub_resource type="DynamicFont" id=5]
+size = 10
+font_data = ExtResource( 7 )
+
 [node name="Menu" type="Node2D"]
+script = ExtResource( 6 )
 
 [node name="Grass" type="ColorRect" parent="."]
 margin_top = -166.811
@@ -94,9 +101,9 @@ __meta__ = {
 }
 
 [node name="ColorRect" type="ColorRect" parent="."]
-margin_top = -13.0
+margin_top = -16.0
 margin_right = 882.0
-margin_bottom = 64.0
+margin_bottom = 61.0
 color = Color( 0.0980392, 0.109804, 0.168627, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -117,15 +124,15 @@ anims/Blink = SubResource( 1 )
 
 [node name="CarAnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "Drive"
-anims/Drive = SubResource( 6 )
+anims/Drive = SubResource( 2 )
 
 [node name="SquidAnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "Swim"
-anims/Swim = SubResource( 7 )
+anims/Swim = SubResource( 3 )
 
 [node name="Car" type="Sprite" parent="."]
 position = Vector2( 582.744, 8 )
-texture = SubResource( 5 )
+texture = SubResource( 4 )
 
 [node name="Squid" type="Sprite" parent="."]
 position = Vector2( 430, 137.7 )
@@ -137,11 +144,25 @@ position = Vector2( 313.745, 26.4598 )
 current = true
 zoom = Vector2( 0.5, 0.5 )
 
+[node name="Credits" type="Label" parent="Camera2D"]
+margin_left = -241.745
+margin_top = 109.54
+margin_right = -17.745
+margin_bottom = 138.54
+custom_fonts/font = SubResource( 5 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+text = "Authors: Michael Schertenleib, Tim Frey
+Art: Kenney.nl"
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Label" type="Label" parent="Camera2D"]
-margin_left = -175.954
-margin_top = 92.6254
-margin_right = 141.046
-margin_bottom = 119.625
+margin_left = -177.745
+margin_top = 61.5402
+margin_right = 139.255
+margin_bottom = 88.5402
 custom_fonts/font = ExtResource( 2 )
 text = "PRESS ENTER TO START"
 align = 1
@@ -150,6 +171,6 @@ __meta__ = {
 }
 
 [node name="Logo" type="Sprite" parent="Camera2D"]
-position = Vector2( 3.67947, -23.3648 )
+position = Vector2( 1.88849, -43.3526 )
 scale = Vector2( 4.9442, 4.9442 )
 texture = ExtResource( 3 )

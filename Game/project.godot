@@ -15,9 +15,12 @@ _global_script_class_icons={
 
 [application]
 
-config/name="Game"
-run/main_scene="res://objects/Main.tscn"
-config/icon="res://icon.png"
+config/name="4 Windows"
+run/main_scene="res://objects/Menu.tscn"
+boot_splash/image="res://assets/images/icon/Logo_color.png"
+boot_splash/use_filter=false
+boot_splash/bg_color=Color( 0.278431, 0.176471, 0.235294, 1 )
+config/icon="res://assets/images/icon/Logo_color.png"
 
 [autoload]
 
