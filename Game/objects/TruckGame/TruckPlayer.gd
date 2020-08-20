@@ -11,6 +11,7 @@ var is_animating = false
 func get_input():
 	var change_lane = Input.is_action_just_pressed('change_lane')
 	if change_lane && !is_animating:
+		$SwitchLaneSound.play()
 		if position_up:
 			$Tween.interpolate_property(self, "position:y", 8, 40, 0.25, Tween.TRANS_CUBIC, Tween.EASE_IN_OUT)
 		else:

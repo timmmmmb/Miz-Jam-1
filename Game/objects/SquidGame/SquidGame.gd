@@ -39,6 +39,7 @@ func remove_ink(body):
 		$InkTimer.wait_time = timeBetween
 		$InkTimer.start()
 		$SquidPlayer/Timer.stop()
+		$InkRefill.play()
 
 
 func _on_InkTimer_timeout():

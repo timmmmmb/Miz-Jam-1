@@ -9,6 +9,7 @@ func _on_Timer_timeout():
 	fireball.connect("body_entered", self, "fireball_hit")
 	get_parent().add_child(fireball)
 	fireball.position = position
+	$FireballSound.play()
 	
 	
 	

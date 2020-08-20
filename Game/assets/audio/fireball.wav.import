@@ -2,12 +2,12 @@
 
 importer="wav"
 type="AudioStreamSample"
-path="res://.import/foom_0.wav-e92e548553b1daf215de42ad7f4e7d8e.sample"
+path="res://.import/fireball.wav-6364c406cdac44a0ca44154ac6283c80.sample"
 
 [deps]
 
-source_file="res://assets/audio/foom_0.wav"
-dest_files=[ "res://.import/foom_0.wav-e92e548553b1daf215de42ad7f4e7d8e.sample" ]
+source_file="res://assets/audio/fireball.wav"
+dest_files=[ "res://.import/fireball.wav-6364c406cdac44a0ca44154ac6283c80.sample" ]
 
 [params]
 

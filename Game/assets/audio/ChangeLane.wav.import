@@ -2,12 +2,12 @@
 
 importer="wav"
 type="AudioStreamSample"
-path="res://.import/Explosion.wav-2d9be97f93ee13f63204310460c1e155.sample"
+path="res://.import/ChangeLane.wav-20a37d39517cd37988b916e4828fed06.sample"
 
 [deps]
 
-source_file="res://assets/audio/Explosion.wav"
-dest_files=[ "res://.import/Explosion.wav-2d9be97f93ee13f63204310460c1e155.sample" ]
+source_file="res://assets/audio/ChangeLane.wav"
+dest_files=[ "res://.import/ChangeLane.wav-20a37d39517cd37988b916e4828fed06.sample" ]
 
 [params]
 

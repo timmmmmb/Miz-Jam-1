@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://assets/images/TileSet.tres" type="TileSet" id=1]
 [ext_resource path="res://assets/font/font22pt.tres" type="DynamicFont" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://assets/images/TruckTexture2.tres" type="Texture" id=8]
 [ext_resource path="res://assets/images/TruckTexture1.tres" type="Texture" id=9]
 [ext_resource path="res://assets/audio/menu_music.wav" type="AudioStream" id=10]
+[ext_resource path="res://assets/audio/Confirm.wav" type="AudioStream" id=11]
 
 [sub_resource type="Animation" id=1]
 resource_name = "Blink"
@@ -183,13 +184,14 @@ zoom = Vector2( 0.5, 0.5 )
 
 [node name="Credits" type="Label" parent="Camera2D"]
 margin_left = -241.745
-margin_top = 109.54
+margin_top = 101.54
 margin_right = -17.745
-margin_bottom = 138.54
+margin_bottom = 130.54
 custom_fonts/font = SubResource( 5 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 text = "Authors: Michael Schertenleib, Tim Frey
-Art: Kenney.nl"
+Art: Kenney.nl
+Music: Alex McCulloch"
 autowrap = true
 __meta__ = {
 "_edit_use_anchors_": false
@@ -215,3 +217,7 @@ texture = ExtResource( 3 )
 [node name="Music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 10 )
 autoplay = true
+
+[node name="Enter" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 11 )
+volume_db = 5.0
