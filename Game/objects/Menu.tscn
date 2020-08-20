@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://assets/images/TileSet.tres" type="TileSet" id=1]
 [ext_resource path="res://assets/font/font22pt.tres" type="DynamicFont" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://assets/font/Xolonium-Regular.ttf" type="DynamicFontData" id=7]
 [ext_resource path="res://assets/images/TruckTexture2.tres" type="Texture" id=8]
 [ext_resource path="res://assets/images/TruckTexture1.tres" type="Texture" id=9]
+[ext_resource path="res://assets/audio/menu_music.wav" type="AudioStream" id=10]
 
 [sub_resource type="Animation" id=1]
 resource_name = "Blink"
@@ -210,3 +211,7 @@ __meta__ = {
 position = Vector2( 1.88849, -43.3526 )
 scale = Vector2( 4.9442, 4.9442 )
 texture = ExtResource( 3 )
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 10 )
+autoplay = true

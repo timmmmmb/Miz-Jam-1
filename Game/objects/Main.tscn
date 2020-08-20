@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://objects/JumpGame/JumpGame.tscn" type="PackedScene" id=1]
 [ext_resource path="res://objects/SquidGame/SquidGame.tscn" type="PackedScene" id=2]
@@ -7,6 +7,8 @@
 [ext_resource path="res://objects/Main.gd" type="Script" id=5]
 [ext_resource path="res://assets/font/font22pt.tres" type="DynamicFont" id=6]
 [ext_resource path="res://assets/font/font36pt.tres" type="DynamicFont" id=7]
+[ext_resource path="res://assets/audio/music.wav" type="AudioStream" id=8]
+[ext_resource path="res://assets/audio/game_over.wav" type="AudioStream" id=9]
 
 [sub_resource type="Animation" id=1]
 resource_name = "DodgeGame"
@@ -298,6 +300,13 @@ margin_right = 224.0
 margin_bottom = 137.0
 custom_fonts/font = ExtResource( 6 )
 text = "Press R to restart"
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 8 )
+autoplay = true
+
+[node name="GameOverSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 9 )
 [connection signal="loose" from="ViewportContainer1/Viewport/JumpGame" to="." method="loose"]
 [connection signal="loose" from="ViewportContainer2/Viewport/SquidGame" to="." method="loose"]
 [connection signal="loose" from="ViewportContainer3/Viewport/DodgeGame" to="." method="loose"]

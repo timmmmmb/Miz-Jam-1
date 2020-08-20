@@ -24,6 +24,8 @@ func loose():
 		HighScore.highscore = currentScore
 	$GameOver/VBoxContainer/Highscore.text = "Highscore: "+str(HighScore.highscore)
 	$AnimationPlayer.stop()
+	$Music.stop()
+	$GameOverSound.play()
 
 func restart():
 	for game in games:
