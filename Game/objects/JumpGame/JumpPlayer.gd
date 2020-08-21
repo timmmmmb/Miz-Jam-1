@@ -9,15 +9,17 @@ export (int) var gravity = 800
 var velocity = Vector2()
 var jumping = false
 
+
 func get_input():
 	velocity.x = 0
 	var jump = Input.is_action_just_pressed('jump')
-	
+
 	if jump and is_on_floor():
 		$JumpSound.play()
 		jumping = true
 		velocity.y = jump_speed
 	velocity.x += run_speed
+
 
 func _physics_process(delta):
 	get_input()

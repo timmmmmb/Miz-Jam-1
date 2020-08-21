@@ -5,6 +5,7 @@ export (int) var run_speed = 100
 var particle = preload("res://objects/SquidGame/Particles.tscn")
 onready var prev_particles = get_node("Sprite/Particles")
 
+
 func get_input():
 	velocity.x = 0
 	velocity.y = 0
@@ -12,7 +13,7 @@ func get_input():
 	var right = Input.is_action_pressed("ui_right")
 	var up = Input.is_action_pressed("ui_up")
 	var down = Input.is_action_pressed("ui_down")
-		
+
 	if left:
 		velocity.x -= run_speed
 	if right:
@@ -21,7 +22,7 @@ func get_input():
 		velocity.y -= run_speed
 	if down:
 		velocity.y += run_speed
-		
+
 	if velocity.x > 0:
 		if velocity.y > 0:
 			rotation_degrees = 135
@@ -42,11 +43,13 @@ func get_input():
 		elif velocity.y < 0:
 			rotation_degrees = 0
 
+
 func _physics_process(_delta):
 	get_input()
 	$Sprite.animation = "swim"
 	velocity = move_and_slide(velocity, Vector2(0, -1))
-	
+
+
 func _change_color(color):
 	$Sprite.material.set_shader_param("color", color)
 	var newparticles = particle.instance()

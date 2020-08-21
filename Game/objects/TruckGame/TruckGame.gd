@@ -11,27 +11,31 @@ var section_offset = -116
 
 var sections = []
 
+
 func _ready():
 	randomize()
 	start_game()
+
 
 func start_game():
 	spawn_section(false)
 	spawn_section(false)
 	spawn_section()
-	
+
+
 func spawn_section(random_index = true):
 	var sectionIndex = 0
 	if random_index:
 		sectionIndex = randi() % 4
 	var section = possible_sections[sectionIndex].instance()
 	call_deferred("add_child", section)
-	call_deferred("move_child",section, 0)
+	call_deferred("move_child", section, 0)
 	section.position.x = section_offset
 	section_offset += SECTION_WIDTH
 	section.get_node("Visibility").connect("screen_exited", self, "out_of_bounds")
 	sections.append(section)
-	
+
+
 func out_of_bounds():
 	sections[0].queue_free()
 	sections.remove(0)
